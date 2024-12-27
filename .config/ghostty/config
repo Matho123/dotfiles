@@ -1,0 +1,27 @@
+window-decoration = false
+shell-integration-features = no-cursor
+# confirm-close-surface = false
+
+background = 000000
+background-opacity = 0.95
+background-blur-radius = 20
+foreground = dddddd
+
+font-family = JetBrains Mono
+font-size = 14
+
+# unbind alt combinations to select tabs in tmux
+keybind = unconsumed:alt+one=ignore 
+keybind = unconsumed:alt+two=ignore 
+keybind = unconsumed:alt+three=ignore 
+keybind = unconsumed:alt+four=ignore 
+keybind = unconsumed:alt+five=ignore 
+keybind = unconsumed:alt+six=ignore 
+keybind = unconsumed:alt+seven=ignore 
+keybind = unconsumed:alt+eight=ignore 
+keybind = unconsumed:alt+nine=ignore 
+keybind = unconsumed:alt+zero=ignore 
+
+keybind = ctrl+shift+j=increase_font_size:1
+keybind = ctrl+shift+k=decrease_font_size:1
+keybind = ctrl+shift+ö=reset_font_size
