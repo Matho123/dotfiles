@@ -1,0 +1,17 @@
+* {
+    font-family: 'Jetbrains Mono'
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 1);
+    color: #ffffff;
+}
+
+#workspaces button {
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    border-radius: 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 255);
+}
