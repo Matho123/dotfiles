@@ -25,7 +25,6 @@ require('mason-lspconfig').setup({
         'ts_ls',
         'eslint',
         'lua_ls',
-        'java_language_server',
         'kotlin_language_server',
         'rust_analyzer',
         'gopls'
