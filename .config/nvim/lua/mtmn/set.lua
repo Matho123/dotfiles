@@ -14,9 +14,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.opt.cursorline = true
-vim.cmd [[let &t_SI = "\e[6 q"]]
-vim.cmd [[let &t_EI = "\e[2 q"]]
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-blinkwait500-blinkon250-blinkoff150,r-cr:hor20,o:hor50"
+vim.opt.guicursor = "n-v-c-sm:block-blinkwait500-blinkon250-blinkoff150,i-ci-ve:ver25-blinkwait500-blinkon250-blinkoff150,r-cr:hor20,o:hor50"
 
 vim.opt.showmode = false
 vim.opt.laststatus = 3
