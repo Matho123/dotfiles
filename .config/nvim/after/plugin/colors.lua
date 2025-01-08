@@ -60,6 +60,19 @@ require('gruvbox').setup({
     },
 });
 
+-- To disable highlights for supported plugin(s), call the `with_config` function **before** setting the colorscheme.
+-- These are the defaults.
+require('base16-colorscheme').with_config({
+    transparent_mode = true,
+    telescope = true,
+    indentblankline = true,
+    notify = true,
+    ts_rainbow = true,
+    cmp = true,
+    illuminate = true,
+    dapui = true,
+})
+
 require('base16-colorscheme').setup({
     base00 = '#333333', base01 = '#121212', base02 = '#222222', base03 = '#333333',
     base04 = '#999999', base05 = '#c1c1c1', base06 = '#999999', base07 = '#c1c1c1',
