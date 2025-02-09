@@ -1,3 +1,5 @@
+vim.hl = vim.highlight -- workaround to make :Inspect work with nvim version 0.10.3, can be removed when fixed
+
 vim.opt.number = true
 vim.opt.rnu = true
 
@@ -17,7 +19,6 @@ vim.opt.guicursor = "n-v-c-sm:block-blinkwait500-blinkon250-blinkoff150,i-ci-ve:
 
 vim.opt.showmode = true
 vim.opt.laststatus = 3
-vim.opt.winbar = "%=%m %t "
 
 vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter" }, {
     callback = function()
@@ -32,11 +33,12 @@ function GetLinePercentage()
     end
 
     local lastline = vim.fn.line("$")
-    if currentline == lastline then
+    local linepercentage = currentline / lastline * 100
+    if currentline == lastline or linepercentage > 99 then
         return "Bot"
     end
 
-    return string.format("%.2f", (currentline / lastline)):sub(3):gsub("^0+", "") .. "%"
+    return string.format("%.0f", linepercentage) .. "%"
 end
 
 function GetDiagnostics()
