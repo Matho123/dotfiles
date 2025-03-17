@@ -1,0 +1,43 @@
+*{
+    border: none;
+    box-shadow: none;
+}
+
+window {
+    font-size: 1.1rem;
+    font-family: "JetBrains Mono";
+    background: rgba(20, 20, 20, 1);
+    color: white;
+    border: solid 0.2rem;
+    border-color: rgba(50, 50, 50, 1);
+}
+
+#input {
+    background: rgba(20, 20, 20, 0);
+    color: white;
+    padding: 0.5rem;
+}
+
+#entry {
+    color: #bbbbbb;
+    padding: 0.5rem;
+    padding-left: 1rem;
+}
+
+#entry:selected {
+    color: white;
+    background-color: #2a2a2a;
+}
+
+#expander-box {
+    color: white;
+    background-color: #2a2a2a;
+}
+
+#text:selected {
+    color: white;
+}
+
+#img {
+    margin-right: 0.7rem;
+}
