@@ -8,12 +8,11 @@ return {
         priority = 1000,
     },
     {
-        "morhetz/gruvbox"
-    },
-    {
         dir = "/home/matho/workspaces/matho-color",
-        config = function ()
-            vim.cmd.colorscheme('matho-color')
-        end
+        priority = 1000,
+        config = function()
+            vim.cmd("colorscheme matho-color")
+        end,
     }
+
 }
