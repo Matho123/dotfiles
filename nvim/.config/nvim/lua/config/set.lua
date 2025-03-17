@@ -22,7 +22,7 @@ vim.opt.laststatus = 3
 
 vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter" }, {
     callback = function()
-        vim.opt.statusline = " %t %m %{v:lua.GetDiagnostics()} %= %r %l:%c %{v:lua.GetLinePercentage()} "
+        vim.opt.statusline = "%t %m %{v:lua.GetDiagnostics()} %= %r %l:%c %{v:lua.GetLinePercentage()}"
     end
 })
 
