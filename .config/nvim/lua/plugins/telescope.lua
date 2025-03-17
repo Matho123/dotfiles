@@ -5,11 +5,15 @@ return {
         require('telescope').setup({
             defaults = {
                 path_display = { "truncate" },
-            }
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+            },
         })
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Telescope find files' })
         vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc = 'Telescope live grep' })
     end
 }
-
