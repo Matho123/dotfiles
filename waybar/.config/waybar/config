@@ -8,8 +8,10 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/window"
     ],
-    "modules-center": [],
+    "modules-center": [
+    ],
     "modules-right": [
         "tray",
         "pulseaudio",
@@ -28,6 +30,11 @@
             "active": "",
             "default": ""
         }
+    },
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "icon": true,
+        "icon-size": 15
     },
     "keyboard-state": {
         "numlock": true,
@@ -145,8 +152,8 @@
       }
     },
     "network": {
-        "format-wifi": "| {essid} ({signalStrength}%)",
-        "format-ethernet": " {gwaddr}",
+        "format-wifi": "|  ({signalStrength}%)",
+        "format-ethernet": " ",
         "tooltip-format": " {ifname} via {gwaddr} \nDOWN:{bandwidthDownBytes} UP:{bandwidthUpBytes}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
