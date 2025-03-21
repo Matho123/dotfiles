@@ -18,5 +18,5 @@ end, { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 
 -- navigation
-vim.keymap.set("n", "<A-e>", "<cmd>lua vim.diagnostic.jump({count=-1})<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-r>", "<cmd>lua vim.diagnostic.jump({count=1})<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-e>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-r>", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
