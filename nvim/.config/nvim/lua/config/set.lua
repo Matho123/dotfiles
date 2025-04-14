@@ -22,9 +22,40 @@ vim.opt.laststatus = 3
 
 vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter" }, {
     callback = function()
-        vim.opt.statusline = "%f %m %{v:lua.GetDiagnostics()} %= %r %l:%c %{v:lua.GetLinePercentage()}"
+        vim.opt.statusline = GetDiagnostics()
     end
 })
+
+function GetDiagnostics()
+    local statusline = "%f %m"
+
+    local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+    local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+    local infos = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+
+    if errors or warnings or hints or infos then
+        statusline = statusline .. " "
+    end
+
+    if errors > 0 then
+        statusline = statusline .. "%#ErrorMsg#" .. string.format("E:%d ", errors)
+    end
+
+    if warnings > 0 then
+        statusline = statusline .. "%#WarningMsg#" .. string.format("W:%d ", warnings)
+    end
+
+    if hints > 0 then
+        statusline = statusline .. "%#Normal#" .. string.format("H:%d ", hints)
+    end
+
+    if infos > 0 then
+        statusline = statusline .. "%#Normal#" .. string.format("I:%d ", infos)
+    end
+
+    return statusline .. "%#Normal#%= %r %l:%c %{v:lua.GetLinePercentage()}"
+end
 
 function GetLinePercentage()
     local currentline = vim.fn.line(".")
@@ -41,29 +72,3 @@ function GetLinePercentage()
     return string.format("%.0f", linepercentage) .. "%"
 end
 
-function GetDiagnostics()
-    local diagnostics = { }
-
-    local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
-    local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-    local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-    local infos = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
-
-    if errors > 0 then
-        table.insert(diagnostics, string.format("E:%d", errors))
-    end
-
-    if warnings > 0 then
-        table.insert(diagnostics, string.format("W:%d", warnings))
-    end
-
-    if hints > 0 then
-        table.insert(diagnostics, string.format("H:%d", hints))
-    end
-
-    if infos > 0 then
-        table.insert(diagnostics, string.format("H:%d", infos))
-    end
-
-    return table.concat(diagnostics, " ")
-end
