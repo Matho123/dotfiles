@@ -47,14 +47,14 @@ function GetDiagnostics()
     end
 
     if hints > 0 then
-        statusline = statusline .. "%#Normal#" .. string.format("H:%d ", hints)
+        statusline = statusline .. "%#StatusLine#" .. string.format("H:%d ", hints)
     end
 
     if infos > 0 then
-        statusline = statusline .. "%#Normal#" .. string.format("I:%d ", infos)
+        statusline = statusline .. "%#StatusLine#" .. string.format("I:%d ", infos)
     end
 
-    return statusline .. "%#Normal#%= %r %l:%c %{v:lua.GetLinePercentage()}"
+    return statusline .. "%#StatusLine#%= %r %l:%c %{v:lua.GetLinePercentage()}"
 end
 
 function GetLinePercentage()
