@@ -10,6 +10,15 @@
 window#waybar {
     background-color: rgba(0, 0, 0, 1);
     color: #ffffff;
+    border-radius: 5px;
+}
+
+.modules-left {
+    padding-left: 15px;
+}
+
+.modules-right {
+    padding-right: 15px;
 }
 
 #workspaces button {
@@ -19,7 +28,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background-color: #404040;
+    background-color: #383838;
 }
 
 #workspaces button.active {
