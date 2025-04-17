@@ -5,26 +5,33 @@
     min-height: 0;
     border: none;
     border-radius: 0;
+    font-weight: 600;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.75);
     color: #ffffff;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .modules-left {
-    padding-left: 15px;
+    padding-left: 3px;
 }
 
 .modules-right {
-    padding-right: 15px;
+    padding-right: 3px;
+}
+
+#workspaces {
+    background-color: #b0b0b0;
+    border-radius: 3px;
+    padding: 2px;
+    margin: 5px;
 }
 
 #workspaces button {
-    color: #bbbbbb;
-    padding: 2px 4px 2px;
-    margin-right: 4px;
+    color: #000000;
+    padding: 0px 8px 0px;
 }
 
 #workspaces button:hover {
@@ -32,6 +39,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: #303030;
-    color: #ffffff;
+    background-color: #000000;
+    color: #e0e0e0;
+    font-weight: 700;
+    border-radius: 3px;
 }
