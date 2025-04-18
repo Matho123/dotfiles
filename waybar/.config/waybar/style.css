@@ -9,7 +9,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #ffffff;
     /* border-radius: 5px; */
 }
@@ -23,24 +23,22 @@ window#waybar {
 }
 
 #workspaces {
-    background-color: #b0b0b0;
     border-radius: 3px;
-    padding: 2px;
-    margin: 5px;
+    margin: 4px;
 }
 
 #workspaces button {
-    color: #000000;
+    color: #e0e0e0;
     padding: 0px 8px 0px;
 }
 
-#workspaces button:hover {
+#workspaces button.hover {
     background-color: #383838;
 }
 
 #workspaces button.active {
-    background-color: #000000;
-    color: #e0e0e0;
+    background-color: #b0b0b0;
+    color: #000000;
     font-weight: 700;
     border-radius: 3px;
 }
