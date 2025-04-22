@@ -81,6 +81,10 @@ return {
                 end,
             })
 
+            vim.diagnostic.config({
+                float = { border = 'rounded' },
+            })
+
             require('mason-lspconfig').setup({
                 ensure_installed = {},
                 handlers = {
