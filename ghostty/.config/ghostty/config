@@ -1,7 +1,7 @@
 window-decoration = false
 # confirm-close-surface = false
 
-background-opacity = 0.85
+background-opacity = 1
 background-blur-radius = 0
 foreground = bbbbbb
 
@@ -12,7 +12,12 @@ shell-integration-features = no-cursor
 
 font-family = JetBrains Mono
 font-size = 15
+<<<<<<< HEAD
 adjust-cell-width = -5%
+=======
+# adjust-cell-height = -5%
+# adjust-cell-width = -5%
+>>>>>>> f605bb30a743f75cff12bddfc05cdb3ea32b43b4
 
 # theme 
 
