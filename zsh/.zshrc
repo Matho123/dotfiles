@@ -1,7 +1,7 @@
 # enable colors
 autoload -U colors && colors
 NEWLINE=$'\n'
-PROMPT="[%n@%M %~] ${NEWLINE} %D{%L:%M:%S} λ "
+PROMPT="[%n@%M %~]$ "
 
 # vi mode
 bindkey -v
@@ -42,6 +42,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 #custom keybinds
 bindkey -s '^f' 'bash ~/.scripts/tmux_session.sh\n'
+bindkey -s '^e' 'yazi\n'
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
