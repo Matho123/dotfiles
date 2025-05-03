@@ -1,7 +1,7 @@
 # enable colors
 autoload -U colors && colors
 NEWLINE=$'\n'
-PROMPT="[%n@%M %~]$ "
+PROMPT="[%~] : "
 
 # vi mode
 bindkey -v
