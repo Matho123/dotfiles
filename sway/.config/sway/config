@@ -44,6 +44,10 @@ set $menu wofi --show drun
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+output * {
+    background ~/Pictures/forest.png fill
+}
+
 ### Input configuration
 input * {
     xkb_layout "de"
@@ -226,17 +230,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 smart_borders 1
@@ -249,3 +243,5 @@ client.focused_inactive "#00669900" "#00669900" "#ffffff" "#00669900"
 include @sysconfdir@/sway/config.d/*
 include outputs
 include workspaces
+
+exec swaybg -i ~/Pictures/forest.png -m fill
