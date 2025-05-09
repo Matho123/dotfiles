@@ -239,7 +239,12 @@ bar {
     }
 }
 
+smart_borders 1
+
 default_border pixel 2
+client.focused "#006699" "#006699" "#ffffff" "#006699" 
+client.unfocused "#00669900" "#00669900" "#ffffff" "#00669900" 
+client.focused_inactive "#00669900" "#00669900" "#ffffff" "#00669900" 
 
 include @sysconfdir@/sway/config.d/*
 include outputs
