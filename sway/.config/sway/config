@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+exec autotiling
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -160,7 +162,7 @@ input type:touchpad {
     bindsym $mod+m fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+v floating toggle
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
@@ -217,6 +219,8 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+
+
 #
 # Status Bar:
 #
@@ -235,4 +239,8 @@ bar {
     }
 }
 
+default_border pixel 2
+
 include @sysconfdir@/sway/config.d/*
+include outputs
+include workspaces
