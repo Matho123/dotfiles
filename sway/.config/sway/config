@@ -4,6 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+
 exec autotiling
 
 ### Variables
@@ -43,10 +44,6 @@ set $menu wofi --show drun
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-
-output * {
-    background ~/Pictures/forest.png fill
-}
 
 ### Input configuration
 input * {
@@ -237,11 +234,11 @@ smart_borders 1
 
 default_border pixel 2
 client.focused "#006699" "#006699" "#ffffff" "#006699" 
-client.unfocused "#00669900" "#00669900" "#ffffff" "#00669900" 
-client.focused_inactive "#00669900" "#00669900" "#ffffff" "#00669900" 
+client.unfocused "#222222" "#222222" "#ffffff" "#222222" 
+client.focused_inactive "#222222" "#222222" "#ffffff" "#222222" 
 
 include @sysconfdir@/sway/config.d/*
 include outputs
 include workspaces
 
-exec swaybg -i ~/Pictures/forest.png -m fill
+exec swaybg --image ~/Pictures/frederic-edwin-church/cayambe.jpg

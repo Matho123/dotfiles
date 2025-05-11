@@ -1,7 +1,7 @@
 window-decoration = false
 # confirm-close-surface = false
 
-background-opacity = 0.9
+background-opacity = 1
 background-blur-radius = 0
 foreground = bbbbbb
 
