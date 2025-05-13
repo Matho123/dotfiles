@@ -9,6 +9,10 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+vim.keymap.set("n", "<leader>yy", "\"+yy")       -- copy line to system clipboard
+vim.keymap.set("v", "<leader>y", "\"+y")         -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>P", "\"+P")         -- paste from clipboard
+vim.keymap.set("v", "<leader>p", "\"+p")         -- replace highlighted text with clipboard contents
 
 -- formatting
 vim.keymap.set("n", "<C-A-l>", function()

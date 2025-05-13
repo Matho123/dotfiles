@@ -6,6 +6,7 @@ background-blur-radius = 0
 foreground = bbbbbb
 
 background = 000000
+cursor-color = 6287b5
 cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor
