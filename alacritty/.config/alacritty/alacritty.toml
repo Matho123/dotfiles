@@ -1,0 +1,11 @@
+[font]
+normal = { family = "Iosevka Term", style = "Regular" }
+size = 15
+
+[window]
+startup_mode = "Fullscreen"
+decorations = "None"
+
+[colors]
+primary = { foreground = "#bbbbbb", background = "#000000" }
+cursor = { cursor = "#6287b5", text = "#000000" }
