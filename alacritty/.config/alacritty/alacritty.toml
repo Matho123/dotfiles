@@ -1,13 +1,22 @@
 [env]
-term = "xterm-256color"
+TERM = "xterm-256color"
+
 [font]
 normal = { family = "Iosevka Term", style = "Regular" }
-size = 15
+size = 18
 
 [window]
-startup_mode = "Fullscreen"
+startup_mode = "Maximized"
 decorations = "None"
+opacity = 0.9
 
 [colors]
 primary = { foreground = "#bbbbbb", background = "#000000" }
 cursor = { cursor = "#6287b5", text = "#000000" }
+
+[keyboard]
+bindings = [
+    { key = "j", mods = "Control | Shift",  action = "IncreaseFontSize" },
+    { key = "k", mods = "Control | Shift",  action = "DecreaseFontSize" },
+    { key = "ö", mods = "Control | Shift",  action = "ResetFontSize" },
+]
