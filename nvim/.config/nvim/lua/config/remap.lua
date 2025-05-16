@@ -14,13 +14,3 @@ vim.keymap.set("v", "<leader>y", "\"+y")         -- copy highlighted text to sys
 vim.keymap.set("n", "<leader>P", "\"+P")         -- paste from clipboard
 vim.keymap.set("v", "<leader>p", "\"+p")         -- replace highlighted text with clipboard contents
 
--- formatting
-vim.keymap.set("n", "<C-A-l>", function()
-    vim.lsp.buf.format { async = false }
-end, { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-
--- navigation
-vim.keymap.set("n", "<A-e>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-r>", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
