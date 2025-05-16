@@ -100,9 +100,9 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%T}",
+        "format": "{:%H:%M}",
         "tooltip-format": "{:%A %B %d %Y}",
-        "interval": 1
+        "interval": 60
     },
     "cpu": {
         "format": "CPU:{usage}%",
