@@ -8,7 +8,7 @@ size = 18
 [window]
 startup_mode = "Maximized"
 decorations = "None"
-opacity = 0.9
+opacity = 1
 
 [colors]
 primary = { foreground = "#bbbbbb", background = "#000000" }
