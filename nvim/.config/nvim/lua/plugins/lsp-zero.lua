@@ -25,6 +25,10 @@ return {
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 }),
+                window = {
+                    documentation = cmp.config.window.bordered("rounded"),
+                    completion = cmp.config.window.bordered("rounded"),
+                },
                 snippet = {
                     expand = function(args)
                         vim.snippet.expand(args.body)
@@ -50,6 +54,10 @@ return {
             vim.opt.signcolumn = 'yes'
         end,
         config = function()
+            vim.diagnostic.config({
+                float = { border = "rounded" },
+            })
+
             local lsp_defaults = require('lspconfig').util.default_config
 
             -- Add cmp_nvim_lsp capabilities settings to lspconfig
@@ -67,7 +75,7 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+                    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<cr>', opts)
                     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
                     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
                     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
@@ -77,12 +85,7 @@ return {
                     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
                     vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
                     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
                 end,
-            })
-
-            vim.diagnostic.config({
-                float = { border = 'rounded' },
             })
 
             require('mason-lspconfig').setup({
@@ -93,6 +96,14 @@ return {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
                     end,
+                    -- ["clangd"] = function()
+                    --     require("lspconfig").clangd.setup {
+                    --         cmd = {
+                    --             "clangd",
+                    --             "--fallback-style=webkit",
+                    --         }
+                    --     }
+                    -- end,
                 }
             })
         end
