@@ -22,7 +22,7 @@ vim.opt.laststatus = 3
 
 -- show dots for whitespaces between characters as well as for leading and trailing spaces
 vim.opt.listchars = { space = "·", trail = "·" ,lead = "·" }
-vim.opt.list = true
+vim.opt.list = false
 
 
 vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter" }, {
