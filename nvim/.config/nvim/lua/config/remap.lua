@@ -14,3 +14,5 @@ vim.keymap.set("v", "<leader>y", "\"+y")         -- copy highlighted text to sys
 vim.keymap.set("n", "<leader>P", "\"+P")         -- paste from clipboard
 vim.keymap.set("v", "<leader>p", "\"+p")         -- replace highlighted text with clipboard contents
 
+-- toggle whitespaces
+vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, silent = true })
