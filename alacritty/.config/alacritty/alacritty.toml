@@ -1,9 +1,9 @@
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
 
 [font]
-normal = { family = "Iosevka Term", style = "Regular" }
-size = 18
+normal = { family = "Iosevka Term Slab", style = "Regular" }
+size = 17
 
 [window]
 startup_mode = "Maximized"
