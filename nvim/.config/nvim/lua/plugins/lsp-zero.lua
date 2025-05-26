@@ -56,6 +56,7 @@ return {
         config = function()
             vim.diagnostic.config({
                 float = { border = "rounded" },
+                virtual_text = true --ensures that floating error hints at the end of lines are shown
             })
 
             local lsp_defaults = require('lspconfig').util.default_config
