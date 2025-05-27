@@ -17,7 +17,7 @@ return {
         end
     },
     {
-        dir = "~/workspaces/personal/matho-color",
+        dir = "~/workspaces/personal/alabaster-cs",
         priority = 1000,
         config = function()
             vim.cmd("colorscheme matho-color")
