@@ -14,22 +14,13 @@ window#waybar {
     /* border-radius: 5px; */
 }
 
-.modules-left {
-    padding-left: 3px;
-}
-
-.modules-right {
-    padding-right: 3px;
-}
-
 #workspaces {
-    border-radius: 3px;
-    margin: 4px;
+    margin: 0px;
 }
 
 #workspaces button {
     color: #e0e0e0;
-    padding: 0px 8px 0px;
+    padding: 0px 6px 0px;
 }
 
 #workspaces button.hover {
@@ -40,12 +31,9 @@ window#waybar {
     background-color: #b0b0b0;
     color: #000000;
     font-weight: 700;
-    border-radius: 2px;
 }
 
 #workspaces button.focused {
-    background-color: #b0b0b0;
-    color: #000000;
+    color: #00b9ff;
     font-weight: 700;
-    border-radius: 2px;
 }
