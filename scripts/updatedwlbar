@@ -1,0 +1,6 @@
+#!/bin/bash
+while :
+do
+    echo $(date +"%a %b %d %R")
+    sleep 15s
+done
