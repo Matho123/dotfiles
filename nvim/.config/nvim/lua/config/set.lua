@@ -1,3 +1,5 @@
+local vim = vim
+
 vim.hl = vim.highlight -- workaround to make :Inspect work with nvim version 0.10.3, can be removed when fixed
 
 vim.opt.number = true
@@ -25,7 +27,7 @@ vim.opt.listchars = { space = "·", trail = "·" ,lead = "·" }
 vim.opt.list = false
 
 
-vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter" }, {
+vim.api.nvim_create_autocmd({ "DiagnosticChanged", "VimEnter", "BufEnter" }, {
     callback = function()
         vim.opt.statusline = GetDiagnostics()
     end

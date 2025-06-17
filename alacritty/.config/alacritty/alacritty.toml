@@ -2,8 +2,8 @@
 TERM = "alacritty"
 
 [font]
-normal = { family = "Iosevka Term Slab", style = "Regular" }
-size = 14
+normal = { family = "Iosevka Term", style = "Regular" }
+size = 16
 
 [window]
 startup_mode = "Maximized"
