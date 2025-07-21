@@ -3,16 +3,16 @@ TERM = "alacritty"
 
 [font]
 normal = { family = "Iosevka Term", style = "Regular" }
-size = 17
+size = 18
 
 [window]
 startup_mode = "Maximized"
 decorations = "None"
-opacity = 0.84
+opacity = 1
 
 [colors]
-primary = { foreground = "#bbbbbb", background = "#000000" }
-cursor = { cursor = "#b3a084", text = "#000000" }
+primary = { foreground = "#bbbbbb", background = "#0b0b0b" }
+cursor = { cursor = "#6287b5", text = "#000000" }
 
 [keyboard]
 bindings = [

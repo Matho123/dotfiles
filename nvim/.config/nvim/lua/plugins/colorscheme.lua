@@ -17,6 +17,10 @@ return {
         end
     },
     {
+        "morhetz/gruvbox",
+        priority = 1000,
+    },
+    {
         dir = "~/workspaces/personal/alabaster-cs",
         priority = 1000,
         config = function()
