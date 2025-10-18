@@ -2,16 +2,21 @@
 TERM = "alacritty"
 
 [font]
-normal = { family = "Iosevka Term", style = "Regular" }
-size = 18
+normal = { family = "Iosevka Term Slab", style = "Medium" }
+bold = { family = "Iosevka Term Slab", style = "ExtraBold" }
+italic = { family = "Iosevka Term Slab", style = "Medium Italic" }
+size = 15
 
 [window]
 startup_mode = "Maximized"
 decorations = "None"
 opacity = 1
 
+[scrolling]
+history = 100000
+
 [colors]
-primary = { foreground = "#bbbbbb", background = "#0b0b0b" }
+primary = { foreground = "#bbbbbb", background = "#000000" }
 cursor = { cursor = "#6287b5", text = "#000000" }
 
 [keyboard]
