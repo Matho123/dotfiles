@@ -67,3 +67,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
     alias ll='ls -alF'
     alias la='ls -A'
     alias l='ls -CF'
+
+# some options
+setopt CORRECT # corrections for incorrectly spelle words
