@@ -1,7 +1,6 @@
 local vim = vim
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "E", "$")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -12,7 +11,11 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 vim.keymap.set("n", "<leader>yy", "\"+yy")       -- copy line to system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")         -- copy highlighted text to system clipboard
 vim.keymap.set("n", "<leader>P", "\"+P")         -- paste from clipboard
+vim.keymap.set("n", "<leader>pp", "\"+p")         -- paste from clipboard
 vim.keymap.set("v", "<leader>p", "\"+p")         -- replace highlighted text with clipboard contents
+
+vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("v", "<C-c>", "<Esc>")
 
 -- toggle whitespaces
 vim.keymap.set("n", "<leader>l", ":set list!<CR>", { noremap = true, silent = true })
