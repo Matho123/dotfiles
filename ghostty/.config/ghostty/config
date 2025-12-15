@@ -1,8 +1,7 @@
 window-decoration = false
 # confirm-close-surface = false
 
-background-opacity = 0.9
-background-blur-radius = 0
+background-opacity = 1
 foreground = bbbbbb
 
 background = 000000
@@ -12,7 +11,7 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 
 font-family = Iosevka Term
-font-size = 15
+font-size = 17
 
 # unbind alt combinations to select tabs in tmux
 keybind = unconsumed:alt+one=ignore 

@@ -1,2 +1,3 @@
 #!/bin/bash
-updatedwlbar | dwl -s "initdwl"
+someblocks &
+dwl -s "initdwl & somebar"

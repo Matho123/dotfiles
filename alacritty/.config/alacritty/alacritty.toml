@@ -2,9 +2,9 @@
 TERM = "alacritty"
 
 [font]
-normal = { family = "Inconsolata", style = "Medium" }
-bold = { family = "Inconsolata", style = "ExtraBold" }
-italic = { family = "Inconsolata", style = "Medium" }
+normal = { family = "Iosevka Term Nerd Font", style = "" }
+#bold = { family = "Iosevka Term", style = "Bold" }
+#italic = { family = "Iosevka Term", style = "Regular" }
 size = 15
 
 [window]

@@ -41,6 +41,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 #custom keybinds
 bindkey -s '^f' 'bash ~/.scripts/tmux_session.sh\n'
+bindkey -M viins '^c' vi-cmd-mode
 
 
 # Use vim keys in tab complete menu:

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-selected_path=$(find ~/dotfiles ~/workspaces/personal ~/workspaces/spreadshirt -mindepth 1 -maxdepth 1 -type d | fzf)
+selected_path=$(find ~/dotfiles ~/workspaces/personal ~/workspaces/spreadshirt ~/workspaces/external -mindepth 1 -maxdepth 1 -type d | fzf)
 if [[ -z $selected_path ]]; then 
     exit 0
 fi
