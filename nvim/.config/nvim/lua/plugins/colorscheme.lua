@@ -21,10 +21,17 @@ return {
         priority = 1000,
     },
     {
+        "p00f/alabaster.nvim",
+        priority = 1000,
+    },
+    {
+        "y9san9/y9nika.nvim"
+    },
+    {
         dir = "~/workspaces/personal/alabaster-cs",
         priority = 1000,
         config = function()
-            vim.cmd("colorscheme matho-color")
+            vim.cmd("colorscheme matho")
         end,
     }
 
