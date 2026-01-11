@@ -26,8 +26,8 @@ return {
                     ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 }),
                 window = {
-                    documentation = cmp.config.window.bordered("rounded"),
-                    completion = cmp.config.window.bordered("rounded"),
+                    documentation = cmp.config.window.bordered({ border = "rounded" }),
+                    completion = cmp.config.window.bordered({ border = "rounded" }),
                 },
                 snippet = {
                     expand = function(args)
