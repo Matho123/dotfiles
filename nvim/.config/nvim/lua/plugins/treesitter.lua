@@ -1,30 +1,36 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            -- A list of parser names, or "all" (the five listed parsers should always be installed)
-            ensure_installed = { "lua", "javascript", "typescript", "c" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
+        config = function()
+            local treesitter = require("nvim-treesitter")
+            treesitter.setup()
+            treesitter.install { "lua", "c", "cpp", "zig", "c3" }
 
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-            auto_install = true,
-
-            highlight = {
-                enable = true,
-
-                -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-                -- Set this to `true` if you depend on 'syntax' being enabled (lifake for indentation).
-                -- Using this option may slow down your editor, and you may see some duplicate highlights.
-                -- Instead of true it can also be a list of languages
-                additional_vim_regex_highlighting = false,
-            },
-            indent = {
-                enable = true
-            }
-        })
-    end
+            vim.api.nvim_create_autocmd('FileType', {
+                pattern = { "lua", "c", "cpp", "zig", "c3" },
+                callback = function()
+                    vim.treesitter.start()
+                    -- vim.wo.foldexpr ='v:lua.vim.treesitter.foldexpr()'
+                    -- vim.wo.foldmethod = 'expr'
+                    -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end
+            })
+        end
+    },
+    {
+        "mks-h/treesitter-autoinstall.nvim",
+        lazy = false,
+        config = function()
+            require("treesitter-autoinstall").setup({
+                -- A list of *treesitter languages* to ignore.
+                ignore = {},
+                -- Auto-enable highlighting for installed languages.
+                highlight = true,
+                -- A list of *treesitter languages* to also enable regex highlighting for
+                regex = {},
+            })
+        end
+    }
 }
