@@ -2,7 +2,7 @@
 TERM = "alacritty"
 
 [font]
-normal = { family = "Iosevka Term Nerd Font", style = "" }
+normal = { family = "Martian Mono Nerd Font", style = "" }
 #bold = { family = "Iosevka Term", style = "Bold" }
 #italic = { family = "Iosevka Term", style = "Regular" }
 size = 15
