@@ -25,11 +25,16 @@ return {
         priority = 1000,
     },
     {
+        "RRethy/base16-nvim",
+        config = function()
+            --vim.cmd("colorscheme base16-black-metal-gorgoroth")
+        end,
+    },
+    {
         dir = "~/workspaces/personal/matho.nvim",
         priority = 1000,
         config = function()
             vim.cmd("colorscheme matho")
         end,
-    }
-
+    },
 }

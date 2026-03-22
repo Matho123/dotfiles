@@ -2,8 +2,13 @@ local vim = vim
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<A-H>", "<C-w>h")
+vim.keymap.set("n", "<A-J>", "<C-w>j")
+vim.keymap.set("n", "<A-K>", "<C-w>k")
+vim.keymap.set("n", "<A-L>", "<C-w>l")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
