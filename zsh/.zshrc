@@ -71,3 +71,4 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # some options
 setopt CORRECT # corrections for incorrectly spelle words
+export PATH="$HOME/.local/bin:$PATH"
