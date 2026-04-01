@@ -1,38 +1,24 @@
-return {
-    "ej-shafran/compile-mode.nvim",
-    version = "^5.0.0",
-    -- you can just use the latest version:
-    -- branch = "latest",
-    -- or the most up-to-date updates:
-    -- branch = "nightly",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        -- if you want to enable coloring of ANSI escape codes in
-        -- compilation output, add:
-        -- { "m00qek/baleia.nvim", tag = "v1.3.0" },
-    },
-    config = function()
-        vim.keymap.set("n", "<leader>R", ":below Compile<CR>")       -- copy line to system clipboard
-        vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")       -- copy line to system clipboard
-        ---@module "compile-mode"
-        ---@type CompileModeOpts
-        vim.g.compile_mode = {
-            -- The string to show in the compile prompt as a default.
-            -- For an empty prompt, you can use:
-            -- default_command = "",
-            -- To use different defaults based on filetype, you can use a table:
-            -- default_command = {
-            --   python = "python %",
-            --   lua = "lua %",
-            --   javascript = "bun %",
-            --   typescript = "bun %",
-            --   c = "cc -o %:r % && ./%:r",
-            --   cpp = "cc -std=c++23 -o %:r % && ./%:r",
-            --   java = "javac % && java %:r",
-            --   go = "go run %",
-            -- },
-            -- A function which returns the default command string is also supported:
-            -- default_command = function()
+vim.keymap.set("n", "<leader>R", ":below Compile<CR>")       -- copy line to system clipboard
+vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")       -- copy line to system clipboard
+---@module "compile-mode"
+---@type CompileModeOpts
+vim.g.compile_mode = {
+    -- The string to show in the compile prompt as a default.
+    -- For an empty prompt, you can use:
+    -- default_command = "",
+    -- To use different defaults based on filetype, you can use a table:
+    -- default_command = {
+        --   python = "python %",
+        --   lua = "lua %",
+        --   javascript = "bun %",
+        --   typescript = "bun %",
+        --   c = "cc -o %:r % && ./%:r",
+        --   cpp = "cc -std=c++23 -o %:r % && ./%:r",
+        --   java = "javac % && java %:r",
+        --   go = "go run %",
+        -- },
+        -- A function which returns the default command string is also supported:
+        -- default_command = function()
             --   local filetype = vim.bo.filetype
             --   if filetype == "python" then
             --     return "python %"
@@ -113,7 +99,5 @@ return {
             debug = false,
             -- Use a pseudo terminal for command execution.
             -- :h compile-mode.use_pseudo_terminal
-            use_pseudo_terminal = false,
+            use_pseudo_terminal = true,
         }
-    end
-}
