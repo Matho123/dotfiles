@@ -95,4 +95,4 @@ require("plugins.oil")
 require("plugins.treesitter")
 require("plugins.compile-mode")
 
-vim.lsp.enable('clangd')
+vim.lsp.enable('ts_ls')
