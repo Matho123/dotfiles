@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
-        vim.cmd("silent! lua vim.hl.on_yank {higroup='Visual', timeout=300}")
+        vim.cmd("silent! lua vim.hl.on_yank {higroup='Visual', timeout=175}")
     end,
 })
 
