@@ -54,11 +54,15 @@ vim.keymap.set("n", "<A-r>", "<cmd>cnext<CR>", { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>ll", ":set list!<CR>", { noremap = true, silent = true }) -- toggle whitespaces
 
-vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>lc", "<cmd>silent lua vim.diagnostic.setqflist()<CR>")
 
-vim.keymap.set("n", "<leader>ff", ":find ", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>fg", ":silent grep! ")
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+
+vim.keymap.set("n", "<leader>ff", "q:ifind ", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>fg", "q:silent grep! ")
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "grep",
     callback = function()
