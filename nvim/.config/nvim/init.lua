@@ -4,7 +4,7 @@ vim.opt.rnu = true
 vim.opt.signcolumn = "yes:1"
 
 vim.opt.swapfile = false
---vim.opt.path = vim.opt.path + "**"
+vim.opt.path = vim.opt.path + "src/**,.config/**"
 
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -12,7 +12,6 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
-
 vim.opt.laststatus = 3
 
 vim.opt.syntax = "off"
@@ -24,6 +23,7 @@ vim.opt.guicursor = "n-v-c-sm:block-blinkwait500-blinkon250-blinkoff150,i-ci-ve:
 vim.opt.listchars = { space = "·", trail = "·" , lead = "·" } -- show dots for whitespaces between characters as well as for leading and trailing spaces
 vim.opt.list = false
 
+vim.opt.loadplugins = true
 vim.opt.winborder = "single"
 
 
@@ -74,22 +74,32 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- ### add packages ###
 vim.pack.add({
-    { src = "git@github.com:Matho123/matho.nvim" },
+    -- coloschemes
+    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+    { src = "https://github.com/dchinmay2/alabaster.nvim" },
+    { src = "https://github.com/blazkowolf/gruber-darker.nvim" },
+
+    -- treesitter
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
+    { src = "https://github.com/mks-h/treesitter-autoinstall.nvim" },
+
+    -- other
+    { src = "https://github.com/nvim-lua/plenary.nvim" }, -- dependency for compile-mode
+    { src = "https://github.com/ej-shafran/compile-mode.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/mbbill/undotree" },
-
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
-    { src = "https://github.com/mks-h/treesitter-autoinstall.nvim" },
-
-    { src = "https://github.com/nvim-lua/plenary.nvim" }, -- dependency for compile-mode
-    { src = "https://github.com/ej-shafran/compile-mode.nvim" },
+    { src = "https://github.com/nvim-mini/mini.pick" },
 })
 
-vim.cmd("colorscheme matho")
+--vim.cmd("colorscheme matho")
+--vim.pack.del({"matho"})
+
 vim.keymap.set("n", "<C-k>", vim.cmd.Git);
 vim.keymap.set('n', '<leader>t', vim.cmd.UndotreeToggle)
+
+require("mini.pick").setup()
 
 require("plugins.oil")
 require("plugins.treesitter")
