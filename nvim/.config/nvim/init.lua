@@ -4,7 +4,7 @@ vim.opt.rnu = true
 vim.opt.signcolumn = "yes:1"
 
 vim.opt.swapfile = false
---vim.opt.path = vim.opt.path + "**"
+vim.opt.path = vim.opt.path + ",src/**,.config/**"
 
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
