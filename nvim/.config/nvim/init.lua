@@ -61,8 +61,8 @@ vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
-vim.keymap.set("n", "<leader>ff", "q:ifind ", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>fg", "q:silent grep! ")
+vim.keymap.set("n", "<leader>pf", "q:ifind ", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>pg", "q:silent grep! ")
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "grep",
     callback = function()
@@ -89,24 +89,21 @@ vim.pack.add({
 
     -- other
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- dependency for compile-mode
+    { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/ej-shafran/compile-mode.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/mbbill/undotree" },
-    { src = "https://github.com/nvim-mini/mini.pick" },
 })
 
---vim.cmd("colorscheme matho")
+vim.cmd("colorscheme matho")
 --vim.pack.del({"matho"})
 
-vim.keymap.set("n", "<C-k>", vim.cmd.Git);
-vim.keymap.set('n', '<leader>t', vim.cmd.UndotreeToggle)
-
-require("mini.pick").setup()
 
 require("plugins.oil")
 require("plugins.treesitter")
 require("plugins.compile-mode")
+require("plugins.telescope")
 
 vim.lsp.enable('ts_ls')
