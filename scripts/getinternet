@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Find default interface (the one used for internet)
+iface=$(ip route | awk '/default/ {print $5; exit}')
+
+# No connection
+if [ -z "$iface" ]; then
+    echo "󰤭"
+    exit
+fi
+
+# Check if it's Ethernet
+case "$iface" in
+    en*|eth*)
+        echo ""
+        exit
+        ;;
+esac
+
+# Otherwise assume Wi-Fi
+# Get signal strength (requires iw)
+signal=$(iw dev "$iface" link 2>/dev/null | awk '/signal:/ {print $2}')
+
+# If not connected
+if [ -z "$signal" ]; then
+    echo "󰤭"
+    exit
+fi
+
+# Convert signal (usually around -30 to -100 dBm)
+# Higher (closer to 0) = better
+if [ "$signal" -ge -50 ]; then
+    icon="󰤨"   # excellent
+elif [ "$signal" -ge -60 ]; then
+    icon="󰤥"   # good
+elif [ "$signal" -ge -70 ]; then
+    icon="󰤢"   # weak
+else
+    icon="󰤟"   # very weak
+fi
+
+echo "$icon"

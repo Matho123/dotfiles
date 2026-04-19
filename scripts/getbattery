@@ -1,0 +1,42 @@
+#!/bin/sh
+
+BAT="/sys/class/power_supply/BAT0"
+
+# Fallback if BAT0 doesn't exist
+[ -d "$BAT" ] || BAT=$(ls -d /sys/class/power_supply/BAT* 2>/dev/null | head -n1)
+
+capacity=$(cat "$BAT/capacity")
+status=$(cat "$BAT/status")  # Charging, Discharging, Full, Unknown
+
+# Choose icon set based on charging state
+if [ "$status" = "Charging" ]; then
+    if [ "$capacity" -lt 20 ]; then
+        icon="󰢜"
+    elif [ "$capacity" -lt 40 ]; then
+        icon="󰂆"
+    elif [ "$capacity" -lt 60 ]; then
+        icon="󰂈"
+    elif [ "$capacity" -lt 80 ]; then
+        icon="󰂉"
+    else
+        icon="󰂅"
+    fi
+else
+    if [ "$capacity" -lt 10 ]; then
+        icon="󰁺"
+    elif [ "$capacity" -lt 20 ]; then
+        icon="󰁻"
+    elif [ "$capacity" -lt 40 ]; then
+        icon="󰁽"
+    elif [ "$capacity" -lt 60 ]; then
+        icon="󰁿"
+    elif [ "$capacity" -lt 80 ]; then
+        icon="󰂀"
+    elif [ "$capacity" -lt 90 ]; then
+        icon="󰂂"
+    else
+        icon="󰁹"
+    fi
+fi
+
+echo "$icon ${capacity}%"

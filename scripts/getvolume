@@ -1,0 +1,19 @@
+#!/bin/sh
+
+vol=$(pamixer --get-volume)
+mute=$(pamixer --get-mute)
+
+if [ "$mute" = "true" ]; then
+    echo ""
+    exit
+fi
+
+if [ "$vol" -eq 0 ]; then
+    icon=""
+elif [ "$vol" -lt 50 ]; then
+    icon=""
+else
+    icon=""
+fi
+
+echo "$icon ${vol}%"
