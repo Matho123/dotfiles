@@ -1,4 +1,5 @@
 #!/bin/bash
 wlr-randr --output DP-1 --mode 2560x1440@239.992004Hz
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlr
 swaybg -i ~/Pictures/asher-brown-durand.jpg &
