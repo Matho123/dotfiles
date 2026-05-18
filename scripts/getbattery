@@ -4,6 +4,7 @@ BAT="/sys/class/power_supply/BAT0"
 
 # Fallback if BAT0 doesn't exist
 [ -d "$BAT" ] || BAT=$(ls -d /sys/class/power_supply/BAT* 2>/dev/null | head -n1)
+[ -n "$BAT" ] || { echo "󱄇"; exit 1; }
 
 capacity=$(cat "$BAT/capacity")
 status=$(cat "$BAT/status")  # Charging, Discharging, Full, Unknown
