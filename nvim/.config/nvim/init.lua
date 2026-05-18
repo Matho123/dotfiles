@@ -30,6 +30,7 @@ vim.opt.winborder = "single"
 -- ### set key remaps and autocommands ###
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>") -- vim.cmd.Ex
+vim.keymap.set("n", "-", "<CMD>Oil<CR>") -- vim.cmd.Ex
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<A-h>", "<C-w>h")
@@ -56,13 +57,15 @@ vim.keymap.set("n", "<leader>ll", ":set list!<CR>", { noremap = true, silent = t
 
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>lc", "<cmd>silent lua vim.diagnostic.setqflist()<CR>")
+vim.keymap.set("v", "<leader>=", "gq")
+vim.keymap.set("i", "<C-a>", "<cmd>lua vim.lsp.omnifunc()<CR>")
 
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 vim.keymap.set("n", "<leader>pf", "q:ifind ", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>pg", "q:silent grep! ")
+vim.keymap.set("n", "<leader>pg", "q:isilent grep! ")
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = "grep",
     callback = function()
@@ -79,7 +82,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- ### add packages ###
 vim.pack.add({
     -- coloschemes
-    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+    { src = "git@github.com:Matho123/matho.nvim.git" },
     { src = "https://github.com/dchinmay2/alabaster.nvim" },
     { src = "https://github.com/blazkowolf/gruber-darker.nvim" },
 
@@ -90,6 +93,7 @@ vim.pack.add({
     -- other
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- dependency for compile-mode
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
+    --{ src = "https://github.com/m00qek/baleia.nvim" }, -- dependency for comile-mode
     { src = "https://github.com/ej-shafran/compile-mode.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -98,8 +102,7 @@ vim.pack.add({
 })
 
 vim.cmd("colorscheme matho")
---vim.pack.del({"matho"})
-
+--vim.pack.del({"baleia"})
 
 require("plugins.oil")
 require("plugins.treesitter")
