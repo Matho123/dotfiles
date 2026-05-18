@@ -1,4 +1,4 @@
 #!/bin/bash
 wlr-randr --output DP-1 --mode 2560x1440@239.992004Hz
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlr
-swaybg -i ~/Pictures/asher-brown-durand.jpg &
+swaybg -i /usr/share/backgrounds/ubuntu-wallpaper-d.png &

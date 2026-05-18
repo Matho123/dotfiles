@@ -18,6 +18,8 @@ if [ "$status" = "Charging" ]; then
         icon="󰂈"
     elif [ "$capacity" -lt 80 ]; then
         icon="󰂉"
+    elif [ "$capacity" -lt 95 ]; then
+        icon="󰂋"
     else
         icon="󰂅"
     fi
@@ -32,7 +34,7 @@ else
         icon="󰁿"
     elif [ "$capacity" -lt 80 ]; then
         icon="󰂀"
-    elif [ "$capacity" -lt 90 ]; then
+    elif [ "$capacity" -lt 95 ]; then
         icon="󰂂"
     else
         icon="󰁹"
