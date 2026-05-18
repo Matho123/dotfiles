@@ -41,6 +41,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 #custom keybinds
 bindkey -s '^f' 'bash ~/.scripts/tmux_session.sh\n'
+bindkey -s '^p' '$(fzf < ~/.histfile)\n'
 bindkey -M viins '^c' vi-cmd-mode
 
 
@@ -72,3 +73,4 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # some options
 setopt CORRECT # corrections for incorrectly spelle words
 export PATH="$HOME/.local/bin:$PATH"
+
