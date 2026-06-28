@@ -93,7 +93,7 @@ vim.pack.add({
     -- other
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- dependency for compile-mode
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
-    --{ src = "https://github.com/m00qek/baleia.nvim" }, -- dependency for comile-mode
+    { src = "https://github.com/m00qek/baleia.nvim", branch = "v1.3.0" }, -- dependency for comile-mode
     { src = "https://github.com/ej-shafran/compile-mode.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -101,7 +101,7 @@ vim.pack.add({
     { src = "https://github.com/mbbill/undotree" },
 })
 
-vim.cmd("colorscheme matho")
+vim.cmd("colorscheme alabaster")
 --vim.pack.del({"baleia"})
 
 require("plugins.oil")
