@@ -117,5 +117,6 @@ require("plugins.oil")
 require("plugins.treesitter")
 require("plugins.compile-mode")
 require("plugins.telescope")
-
+-- Enable inline diagnostic error messages (disabled by default in stock Neovim)
+vim.diagnostic.config({ virtual_text = true })
 vim.lsp.enable('ts_ls')
