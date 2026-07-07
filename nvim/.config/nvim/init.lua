@@ -25,6 +25,7 @@ vim.opt.list = false
 
 vim.opt.loadplugins = true
 vim.opt.winborder = "single"
+vim.opt.winbar = ""
 
 
 -- ### set key remaps and autocommands ###
@@ -43,6 +44,10 @@ vim.keymap.set("v", "<A-J>", ":m '>+1<CR>gv=gv")  -- move line up(v)
 vim.keymap.set("v", "<A-K>", ":m '<-2<CR>gv=gv")  -- move line down(v)
 vim.keymap.set("n", "<leader>yy", "\"+yy")        -- copy line to system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")          -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yip", "\"+yip")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yis", "\"+yis")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yiw", "\"+yiw")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yiW", "\"+yiW")      -- copy highlighted text to system clipboard
 vim.keymap.set("n", "<leader>P", "\"+P")          -- paste from clipboard
 vim.keymap.set("n", "<leader>pp", "\"+p")         -- paste from clipboard
 vim.keymap.set("v", "<leader>p", "\"+p")          -- replace highlighted text with clipboard contents
@@ -101,7 +106,7 @@ vim.pack.add({
     { src = "https://github.com/mbbill/undotree" },
 })
 
-vim.cmd("colorscheme alabaster")
+vim.cmd("colorscheme matho")
 --vim.pack.del({"baleia"})
 
 require("plugins.oil")
