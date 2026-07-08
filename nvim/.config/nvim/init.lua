@@ -48,6 +48,10 @@ vim.keymap.set("n", "<leader>yip", "\"+yip")      -- copy highlighted text to sy
 vim.keymap.set("n", "<leader>yis", "\"+yis")      -- copy highlighted text to system clipboard
 vim.keymap.set("n", "<leader>yiw", "\"+yiw")      -- copy highlighted text to system clipboard
 vim.keymap.set("n", "<leader>yiW", "\"+yiW")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yap", "\"+yap")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yas", "\"+yas")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yaw", "\"+yaw")      -- copy highlighted text to system clipboard
+vim.keymap.set("n", "<leader>yaW", "\"+yaW")      -- copy highlighted text to system clipboard
 vim.keymap.set("n", "<leader>P", "\"+P")          -- paste from clipboard
 vim.keymap.set("n", "<leader>pp", "\"+p")         -- paste from clipboard
 vim.keymap.set("v", "<leader>p", "\"+p")          -- replace highlighted text with clipboard contents
