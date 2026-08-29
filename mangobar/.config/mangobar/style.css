@@ -1,0 +1,15 @@
+* {
+    font-family: Iosevka Nerd Font Propo;
+    font-size: 16;
+    font-weight: bold;
+
+    color: #cccccc;
+    background-color: #000000;
+    padding: 5;
+    border-radius: 0;
+}
+
+#tags.active {
+    background-color: #c9b890;
+    color: #000000;
+}

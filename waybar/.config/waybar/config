@@ -1,44 +1,52 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
     // "height": 10, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
    //"margin-top": 4,
    //"margin-left": 4,
    //"margin-right": 4,
-    "spacing": 15, // Gaps between modules (4px)
+    "spacing": 20, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window",
-        "sway/workspaces",
-    ],
+       "mango/workspaces",
+       "mango/layout",
+     ],
     "modules-center": [
     ],
     "modules-right": [
         "tray",
+        "cpu",
+        "memory",
         "pulseaudio",
         "network",
         "battery",
         "clock",
     ],
-    // Modules configuration
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "warp-on-scroll": false,
-        "format": "{id}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        }
+    "mango/workspaces": {
+        "format": "{icon}",
+        "hide-empty": true,
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "overview-label": "OVERVIEW",
     },
-    "hyprland/window": {
-        "format": "> {initialTitle}",
-        "icon": false,
-        "icon-size": 15
+    "mango/keymode": {
+    	"format": "{}",
+    	// "format-default": " Default",
+        // "format-test": " Test",
+    },
+    "mango/window": {
+      "format": "{}",
+        "icon-size": 20
+    },
+    "mango/layout": {
+        "format": "{}",
+        // "format-S": "Scroller",
+        // "format-T": "Tile",
+    },
+    "mango/language": {
+    "format": "{short}",
     },
     "keyboard-state": {
         "numlock": true,
@@ -105,12 +113,12 @@
         "interval": 60
     },
     "cpu": {
-        "format": "CPU:{usage}%",
+        "format": " {usage}%",
         "tooltip": false,
         "interval": 10
     },
     "memory": {
-        "format": "MEM:{}%",
+        "format": " {}%",
         "interval": 10
     },
     "temperature": {
@@ -157,9 +165,9 @@
     },
     "network": {
         "format-wifi": "({signalStrength}%)",
-        "format-ethernet": " ",
-        "tooltip-format": " {ifname} via {gwaddr} \nDOWN:{bandwidthDownBytes} UP:{bandwidthUpBytes}",
-        "format-linked": " {ifname} (No IP)",
+        "format-ethernet": "",
+        "tooltip-format": "{ifname} via {gwaddr} \nDOWN:{bandwidthDownBytes} UP:{bandwidthUpBytes}",
+        "format-linked": " {ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected",
         "interval": 5
     },

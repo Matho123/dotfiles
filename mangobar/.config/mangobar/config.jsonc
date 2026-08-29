@@ -1,0 +1,7 @@
+{
+    "position": "bottom",
+    "height": 15,
+    "modules-left": ["workspaces", "layout"],
+    "modules-center": [],
+    "modules-right": ["tray", "cpu", "memory", "pulseaudio", "battery", "clock#time"]
+}
