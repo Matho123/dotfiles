@@ -43,7 +43,8 @@
     "mango/layout": {
         "format": "{}",
         // "format-S": "Scroller",
-        // "format-T": "Tile",
+        "format-T": "[]=",
+        "format-M": "[M]",
     },
     "mango/language": {
     "format": "{short}",
