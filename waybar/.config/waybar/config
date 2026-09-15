@@ -17,8 +17,8 @@
     ],
     "modules-right": [
         "tray",
-        "cpu",
-        "memory",
+        //"cpu",
+        //"memory",
         "pulseaudio",
         "network",
         "battery",
@@ -141,14 +141,16 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": "󱐋 {capacity}% ",
-        "format-plugged": " {capacity}%",
+        "format": "{icon}",
+        "format-full": "{icon}",
         "format-alt": "{time} {icon}",
+        "tooltip-format": "{capacity}% charged\n{time} left",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": { 
+            "default": ["󰂎", "󰁻", "󰁾", "󰂀", "󰁹"],
+            "charging": ["󰢟", "󰂆", "󰢝", "󰢞", "󰂅"],
+        }
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -165,12 +167,16 @@
       }
     },
     "network": {
-        "format-wifi": " ({signalStrength}%)",
+        "format-wifi": "{icon}",
         "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} \nDOWN:{bandwidthDownBytes} UP:{bandwidthUpBytes}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) \nDOWN:{bandwidthDownBytes} UP:{bandwidthUpBytes}",
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "⚠  Disconnected",
-        "interval": 5
+        "interval": 5,
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        }
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -181,7 +187,6 @@
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
             "hands-free": "",
             "headset": "",
             "phone": "",
