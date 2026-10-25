@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")       -- copy line to s
 ---@type CompileModeOpts
 vim.g.compile_mode = {
     default_command = "",
-    baleia_setup = true,
+    ansi_color = { kind = "render" },
     auto_jump_to_first_error = false,
     recompile_no_fail = true,
     use_pseudo_terminal = true,
