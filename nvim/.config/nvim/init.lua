@@ -94,6 +94,8 @@ vim.pack.add({
     { src = "git@github.com:Matho123/matho.nvim.git" },
     { src = "https://github.com/dchinmay2/alabaster.nvim" },
     { src = "https://github.com/blazkowolf/gruber-darker.nvim" },
+    { src = "https://github.com/oskarnurm/koda.nvim" },
+
 
     -- treesitter
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main" },
@@ -108,6 +110,10 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/tpope/vim-fugitive" },
     { src = "https://github.com/mbbill/undotree" },
+})
+
+require("koda").setup({
+    transparent = true,
 })
 
 vim.cmd("colorscheme matho")

@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 require("treesitter-autoinstall").setup({
     -- A list of *treesitter languages* to ignore.
-    ignore = { "c3" },
+    ignore = {},
     -- Auto-enable highlighting for installed languages.
     highlight = true,
     -- A list of *treesitter languages* to also enable regex highlighting for
